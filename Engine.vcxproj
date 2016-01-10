@@ -23,6 +23,7 @@
     <ClCompile Include="Engine\Engine.cpp" />
     <ClCompile Include="Engine\ImageManager.cpp" />
     <ClCompile Include="Engine\Level.cpp" />
+    <ClCompile Include="Engine\MapRenderer.cpp" />
     <ClCompile Include="Engine\Tile.cpp" />
     <ClCompile Include="Example\Main.cpp" />
   </ItemGroup>
@@ -31,12 +32,14 @@
     <ClInclude Include="Engine\Engine.h" />
     <ClInclude Include="Engine\ImageManager.h" />
     <ClInclude Include="Engine\Level.h" />
+    <ClInclude Include="Engine\MapRenderer.h" />
     <ClInclude Include="Engine\Position.h" />
     <ClInclude Include="Engine\Tile.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="Assets\TestSprite.png" />
     <Image Include="Assets\tileset.png" />
+    <Image Include="Assets\World_A2.png" />
   </ItemGroup>
   <ItemGroup>
     <Xml Include="Assets\level1.xml" />

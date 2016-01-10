@@ -17,6 +17,9 @@
     <ClCompile Include="Engine\Tile.cpp">
       <Filter>Engine</Filter>
     </ClCompile>
+    <ClCompile Include="Engine\MapRenderer.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine\Engine.h">
@@ -37,6 +40,9 @@
     <ClInclude Include="Engine\Position.h">
       <Filter>Headers</Filter>
     </ClInclude>
+    <ClInclude Include="Engine\MapRenderer.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Xml Include="Assets\level1.xml">
@@ -51,6 +57,9 @@
       <Filter>Assets</Filter>
     </Image>
     <Image Include="Assets\tileset.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\World_A2.png">
       <Filter>Assets</Filter>
     </Image>
   </ItemGroup>
