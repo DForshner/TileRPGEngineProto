@@ -3,7 +3,7 @@
 A prototype 2d tile RPG engine using SFML.
 
 #### Screenshots
-![Screenshot](/ScreenShots/Proto12.png)
+![Screenshot](/ScreenShots/Proto1.png)
 
 GOALS
 ----
