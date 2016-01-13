@@ -19,7 +19,7 @@ std::string buildString2(std::ifstream* fin) {
   return contents;
 }
 
-struct MapTileToLoad {
+struct TileToLoad {
   int id;
   int x;
   int y;
@@ -30,7 +30,7 @@ struct MapToLoad {
   int width;
   int height;
   std::vector<std::string> tilesets;
-  std::vector<MapTileToLoad> tiles;
+  std::vector<TileToLoad> tiles;
 };
 
 constexpr const char * TILESET_NODE = "tileset";
@@ -72,7 +72,7 @@ void Level::loadLevel(const std::string& fileName, ImageManager& imageManager) {
     std::string walkString = tileNode->first_attribute("walkable")->value();
     bool walkable = (walkString == "true") ? true : false;
 
-    MapTileToLoad tile {
+    TileToLoad tile {
       atoi(tileNode->first_attribute("baseid")->value()),
       atoi(tileNode->first_attribute("x")->value()),
       atoi(tileNode->first_attribute("y")->value()),

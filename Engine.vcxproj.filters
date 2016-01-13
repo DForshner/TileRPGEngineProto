@@ -20,6 +20,12 @@
     <ClCompile Include="Engine\MapRenderer.cpp">
       <Filter>Engine</Filter>
     </ClCompile>
+    <ClCompile Include="Engine\LevelLoader.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Libraries\base64.cpp">
+      <Filter>Libraries</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine\Engine.h">
@@ -42,6 +48,15 @@
     </ClInclude>
     <ClInclude Include="Engine\MapRenderer.h">
       <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\EngineTypes.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\LevelLoader.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Libraries\base64.h">
+      <Filter>Libraries</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -72,6 +87,9 @@
     </Filter>
     <Filter Include="Engine">
       <UniqueIdentifier>{cf34520c-a429-48a2-b54b-621fe90d6572}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Libraries">
+      <UniqueIdentifier>{dc93ca7a-1930-47ea-8db1-15416be8487c}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
