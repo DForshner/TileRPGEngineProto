@@ -4,12 +4,10 @@
 #include <exception>
 #include <cassert>
 
-MapRenderer::MapRenderer(sf::Texture *texture, TileProvider provider, float tileSize, int layers) {
-  if (provider == 0 || layers <= 0) throw "hey";
-  this->_provider = provider;
-  this->_texture = texture;
-  this->_tileSize = tileSize;
-  this->_layers = layers;
+MapRenderer::MapRenderer(sf::Texture *texture, TileProvider callback, float tileSize, int layers) :
+  _provider(callback), _texture(texture), _tileSize(tileSize), _layers(layers) {
+  assert(callback);
+  assert(layers > 0);
 }
 
 void MapRenderer::refreshLocal(int left, int top, int right, int bottom) {
@@ -85,7 +83,7 @@ void MapRenderer::setCorner(sf::Vector2f v) {
 // Inserts color and texture data into vertex array for a single tile (quad)
 void MapRenderer::draw(int index, sf::FloatRect display, sf::IntRect texture, sf::Color color) {
 
-  // Perf: use pointers to avoid array bound checks (optimization)
+  // Perf: use pointers to avoid array bound check on sf::Vertex (optimization)
   auto ptr = &_vertices[index];
 
   // top left corner

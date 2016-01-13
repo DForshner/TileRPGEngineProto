@@ -1,26 +1,29 @@
 #pragma once
 
+#include "EngineTypes.h"
 #include <SFML\Graphics.hpp>
 #include <vector>
+#include <functional>
 
 // callback function that will provide data for each tile
-typedef void(*TileProvider)(int, int, int, sf::Color&, sf::IntRect&);
+typedef std::function<void(int, int, int, sf::Color&, sf::IntRect&)> TileProvider;
 
-// Provides fast rendering of tilemaps
+// Fast rendering of tilemaps using quads
 class MapRenderer : public sf::Drawable {
 public:
-  MapRenderer(sf::Texture *texture, TileProvider provider, float tileSize, int layers);
+  MapRenderer(sf::Texture *texture, TileProvider callback, float tileSize, int layers);
   ~MapRenderer() {}
 
-  float getTileSize() const { return _tileSize; }
+  float getTileSize() const noexcept { return _tileSize; }
 
-  int getLayers() const { return _layers; }
+  int getLayers() const noexcept { return _layers; }
 
   // Redraw every tile on screen
   void refresh() { refreshLocal(0, 0, _width, _height); }
 
   // Redraw single tile
   void refresh(int x, int y);
+  void refresh(Tile2DPosition p) { refresh(p.x, p.y); }
 
   // Draw map on screen
   void draw(sf::RenderTarget &target, sf::RenderStates states) const;
